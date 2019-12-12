@@ -1,0 +1,6 @@
+.container-fluid{
+  padding: 0px 100px;
+}
+#old-price{
+  text-decoration: line-through;
+}
