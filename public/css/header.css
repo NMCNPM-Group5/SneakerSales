@@ -1,0 +1,105 @@
+#header>* {
+    align-items: center;
+}
+
+.dropdown-menu {
+    margin: 20px;
+}
+
+.dropdown-item:focus {
+    background-color: white;
+}
+
+.navbar {
+    background-color: white !important;
+    border: white;
+    border-bottom: #b0b0b0;
+    border-style: solid;
+}
+
+.quicksearch button {
+    height: 37px;
+    width: 37px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-image: url(../img/Icon_search.png);
+    background-color: white;
+}
+
+.quicksearch {
+    background-color: white;
+    margin-right: 10px;
+}
+
+#quicksearch-hidden {
+    margin-right: 10px;
+}
+
+.usericon {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 5px;
+}
+
+.usericon>a {
+    margin: 5px;
+}
+
+.usericon>a:hover {
+    border-radius: 10px;
+    background-color: #f6f6f6;
+}
+
+.container-fluid {
+    padding: 20px 40px;
+    padding-bottom: 0px;
+}
+
+.menu {
+    margin: 0px -40px;
+}
+
+button {
+    margin: 0;
+    border: 0px solid;
+}
+
+button.active,
+a.active.focus,
+a.active:focus,
+a.focus,
+a:active.focus,
+a:active:focus,
+a:focus,
+button.active.focus,
+button.active:focus,
+button.focus,
+button:active.focus,
+button:active:focus,
+button:focus,
+.btn.active.focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn:active:focus,
+.btn:focus,
+.btn-primary.active.focus,
+.btn-primary.focus,
+.btn-primary.active:focus,
+.btn-primary:active.focus,
+.btn-primary:active:focus,
+.btn-primary:focus,
+.btn-primary.dropdown-toggle:focus {
+    outline: 0;
+    outline-color: transparent;
+    outline-width: 0;
+    outline-style: none;
+    box-shadow: none !important;
+    cursor: pointer;
+}
+
+#searchClose {
+    text-decoration: none;
+    color: black;
+}

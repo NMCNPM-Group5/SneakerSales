@@ -1,0 +1,48 @@
+.cartInfo {
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+.products {
+    border: 2px solid black;
+}
+
+.product-name,
+.product-price,
+.product-quantity,
+.product-subtotal {
+    margin-top: 20px;
+}
+
+#headCart {
+    border: 2px solid black;
+    margin-top: 20px;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-bottom: 20px;
+    border-bottom: 0px;
+}
+
+.addCoupon {
+    border: 2px solid black;
+    border-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.coupon {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.Process {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.button {
+    padding-top: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 10px;
+}
