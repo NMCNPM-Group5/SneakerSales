@@ -183,5 +183,14 @@
         </div>
       </div>
     </div>
+    {{#each sneaker}}
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="{{imgPath}}" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">{{name}}</h5>
+        <p class="card-text">{{price}}</p>
+      </div>
+    </div>
+    {{/each}}
   </div>
 </div>

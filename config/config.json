@@ -1,13 +1,11 @@
 {
   "development": {
-    "username": "postgres-username",
-    "password": "postgres-password",
-    "database": "database-name",
+    "username": "postgres",
+    "password": "duythongminh229",
+    "database": "SneakerSales",
     "host": "127.0.0.1",
     "dialect": "postgres"
-    //"dialectOptions": {
-    //    "ssl": true
-    //}
+
   },
   "test": {
     "username": "root",

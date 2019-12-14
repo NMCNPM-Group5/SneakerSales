@@ -16,23 +16,19 @@ app.engine("hbs", hbs.engine);
 app.set("view engine", "hbs");
 
 // Create database
-var sneaker = require("./sneaker");
+var models = require("./models");
 app.get("/sync", function(req, res) {
   models.sequelize.sync().then(function() {
     res.send("database sync completed!");
   });
 });
 
+//
 // hien thi trang chu
-app.get("/", (req, res) => {
-  //res.locals.data = data;
-  res.render("index");
-});
+app.use("/", require("./routes/indexRouter"));
+app.use("/search", require("./routes/searchRouter"));
+
 // hien thi trang chi tiet
-app.get("/:index", (req, res) => {
-  let index = req.params.index;
-  res.render("detail/" + index);
-});
 
 // start server
 app.set("port", process.env.PORT || 3000);
