@@ -11,7 +11,7 @@
           Nam
         </label>
       </div>
-      <div class="form-check">
+      <div class="form-check" onchange="genderChange(this)">
         <input class="form-check-input" type="radio" name="exampleRadios" id="avd_gender_female" value="option1"
           checked />
         <label class="form-check-label" for="avd_gender_female">
@@ -22,18 +22,21 @@
         <p><b>Màu sắc</b></p>
         <div class="container">
           <div class="row">
-            <div class="color-square"></div>
-            <div class="color-square"></div>
-            <div class="color-square"></div>
-            <div class="color-square"></div>
-            <div class="color-square"></div>
+            <div class="color-square" style="background-color: black" id="black" onclick="colorChange(this.id)">
+            </div>
+            <div class="color-square" style="background-color: white" id="white" onclick="colorChange(this.id)"></div>
+            <div class="color-square" style="background-color: red" id="red" onclick="colorChange(this.id)"></div>
+            <div class="color-square" style="background-color: yellow" id="yellow" onclick="colorChange(this.id)"></div>
+            <div class="color-square" style="background-color: orange" id="orange" onclick="colorChange(this.id)"></div>
+            <div class="color-square" style="background-color: blue" id="blue" onclick="colorChange(this.id)"></div>
+            <div class="color-square" style="background-color: green" id="green"></div>
           </div>
         </div>
       </div>
       <div class="size">
         <p><b>Size</b></p>
         <div class="form-group">
-          <select class="form-control" id="size-option">
+          <select class="form-control" id="size-option" onchange="sizeChange(this)">
             <option>36</option>
             <option>37</option>
             <option>38</option>
@@ -49,7 +52,7 @@
       <div class="brand">
         <p><b>Brand</b></p>
         <div class="form-group">
-          <select class="form-control" id="brand-option">
+          <select class="form-control" id="brand-option" onchange="brandChange(this)">
             <option>Adidas</option>
             <option>Nike</option>
             <option>Converse</option>
@@ -107,91 +110,77 @@
     <div class="res-product">
       <div class="container">
         <div class="row">
-          <div class="col-lg-3 item">
-            <div class="itemImg" style="background-image: url(../public/img/sneaker/1.jpg);"></div>
-            <div class="itemName">
-              Sneaker Name 1
-            </div>
-            <div class="itemPrice">
-              1.499.000 VNĐ
-            </div>
-          </div>
-          <div class="col-lg-3 item">
+          {{#each sneaker}}
+          <div class="col-lg-3 col-md-4 item">
             <div class="itemImg" style="background-image: url(../public/img/sneaker/2.jpg);"></div>
-            <div class="itemName">
-              Sneaker Name 1
+            <div class="itemName" id="itemName">
+              {{name}}
             </div>
             <div class="itemPrice">
-              1.499.000 VNĐ
+              {{price}}
             </div>
           </div>
-          <div class="col-lg-3 item">
-            <div class="itemImg" style="background-image: url(../public/img/sneaker/3.jpg);"></div>
-            <div class="itemName">
-              Sneaker Name 1
-            </div>
-            <div class="itemPrice">
-              1.499.000 VNĐ
-            </div>
-          </div>
-          <div class="col-lg-3 item">
-            <div class="itemImg" style="background-image: url(../public/img/sneaker/3.jpg);"></div>
-            <div class="itemName">
-              Sneaker Name 1
-            </div>
-            <div class="itemPrice">
-              1.499.000 VNĐ
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-3 item">
-            <div class="itemImg" style="background-image: url(../public/img/sneaker/1.jpg);"></div>
-            <div class="itemName">
-              Sneaker Name 1
-            </div>
-            <div class="itemPrice">
-              1.499.000 VNĐ
-            </div>
-          </div>
-          <div class="col-lg-3 item">
-            <div class="itemImg" style="background-image: url(../public/img/sneaker/2.jpg);"></div>
-            <div class="itemName">
-              Sneaker Name 1
-            </div>
-            <div class="itemPrice">
-              1.499.000 VNĐ
-            </div>
-          </div>
-          <div class="col-lg-3 item">
-            <div class="itemImg" style="background-image: url(../public/img/sneaker/3.jpg);"></div>
-            <div class="itemName">
-              Sneaker Name 1
-            </div>
-            <div class="itemPrice">
-              1.499.000 VNĐ
-            </div>
-          </div>
-          <div class="col-lg-3 item">
-            <div class="itemImg" style="background-image: url(../public/img/sneaker/3.jpg);"></div>
-            <div class="itemName">
-              Sneaker Name 1
-            </div>
-            <div class="itemPrice">
-              1.499.000 VNĐ
-            </div>
-          </div>
+          {{/each}}
         </div>
       </div>
     </div>
-    {{#each sneaker}}
-    <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="{{imgPath}}" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">{{name}}</h5>
-        <p class="card-text">{{price}}</p>
-      </div>
-    </div>
-    {{/each}}
+
   </div>
 </div>
+
+<script language="javascript">
+
+  window.onload = function () {
+    if (GetURLParameter("brand") != null)
+      document.getElementById("brand-option").value = GetURLParameter("brand");
+    if (GetURLParameter("size") != null)
+      document.getElementById("size-option").value = GetURLParameter("size");
+    //console.log(GetURLParameter(brand));
+  };
+
+  function brandChange(brand) {
+    let color = "";
+    if (GetURLParameter("color") != null)
+      color = GetURLParameter("color");
+    let size = "";
+    if (GetURLParameter("size") != null)
+      size = GetURLParameter("size");
+
+    let url = '/search?brand=' + brand.value + '&color=' + color + '&size=' + size;
+    location.href = url;
+
+  }
+
+  function colorChange(color) {
+    let brand = "";
+    if (GetURLParameter("brand") != null)
+      brand = GetURLParameter("brand");
+    let size = "";
+    if (GetURLParameter("size") != null)
+      size = GetURLParameter("size");
+    let url = '/search?brand=' + brand + '&color=' + color + '&size=' + sizes;
+    location.href = url;
+  }
+
+  function sizeChange(size) {
+    let brand = "";
+    if (GetURLParameter("brand") != null)
+      brand = GetURLParameter("brand");
+    let color = "";
+    if (GetURLParameter("color") != null)
+      color = GetURLParameter("color");
+    let url = '/search?brand=' + brand + '&color=' + color + '&size=' + size.value;
+    console.log(url);
+    location.href = url;
+  }
+  function GetURLParameter(sParam) {
+    var sPageURL = window.location.search.substring(1);
+    var sURLVariables = sPageURL.split('&');
+    for (var i = 0; i < sURLVariables.length; i++) {
+      var sParameterName = sURLVariables[i].split('=');
+      if (sParameterName[0] == sParam) {
+        return sParameterName[1];
+      }
+    }
+  }
+</script>

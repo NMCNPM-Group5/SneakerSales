@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
   );
   Sneaker.associate = function(models) {
     // associations can be defined here
-    Sneaker.hasMany(models.Size, { foreignKey: "sizeID" });
+    Sneaker.belongsTo(models.Size, { foreignKey: "sizeID" });
     //Sneaker.belongsTo(models.Brand, { foreignKey: "brandName" });
   };
   return Sneaker;
