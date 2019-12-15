@@ -17,7 +17,8 @@ router.post('/signUp', (req, res, next)=>{
   };
   let confirmPassword= req.body.confirmPassword;
   let keepLoggedIn = (req.body.keepLoggedIn!= undefined);
-
+  console.log(user.password);
+  console.log(user.password);
   //Kiem tra confirmpassword va password
   if( user.password != confirmPassword){
     return res.render('signUp', {

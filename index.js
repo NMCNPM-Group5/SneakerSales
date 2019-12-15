@@ -2,12 +2,12 @@ var express = require("express");
 var app = express();
 var bodyParser = require('body-parser')
 
+
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
-
 // parse application/json
-app.use(bodyParser.json())
-//Setting for app here
+// app.use(bodyParser.json())
+// Setting for app here
 app.use(express.static(__dirname));
 
 var expressHbs = require("express-handlebars");
@@ -30,6 +30,7 @@ app.get("/sync", function(req, res) {
 });
 
 //
+
 // hien thi trang chu
 app.use("/", require("./routes/indexRouter"));
 // hien thi trang chi tiet
