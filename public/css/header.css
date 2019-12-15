@@ -2,22 +2,22 @@
     align-items: center;
 }
 
-.dropdown-menu {
+#header .dropdown-menu {
     margin: 20px;
 }
 
-.dropdown-item:focus {
+#header  .dropdown-item:focus {
     background-color: white;
 }
 
-.navbar {
+#header .navbar {
     background-color: white !important;
     border: white;
     border-bottom: #b0b0b0;
     border-style: solid;
 }
 
-.quicksearch button {
+#header  .quicksearch button {
     height: 37px;
     width: 37px;
     overflow: hidden;
@@ -27,7 +27,7 @@
     background-color: white;
 }
 
-.quicksearch {
+#header  .quicksearch {
     background-color: white;
     margin-right: 10px;
 }
@@ -36,13 +36,13 @@
     margin-right: 10px;
 }
 
-.usericon {
+#header  .usericon {
     display: flex;
     justify-content: flex-end;
     margin-right: 5px;
 }
 
-.usericon>a {
+#header  .usericon>a {
     margin: 5px;
 }
 
@@ -60,7 +60,7 @@
     margin: 0px -40px;
 }
 
-button {
+#header  button {
     margin: 0;
     border: 0px solid;
 }

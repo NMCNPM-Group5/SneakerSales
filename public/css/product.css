@@ -1,6 +1,9 @@
 .container-fluid{
   padding: 0px 100px;
 }
+#header{
+  padding: 0px 40px;
+}
 #old-price{
   text-decoration: line-through;
 }

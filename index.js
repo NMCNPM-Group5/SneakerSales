@@ -26,10 +26,11 @@ app.get("/sync", function(req, res) {
 //
 // hien thi trang chu
 app.use("/", require("./routes/indexRouter"));
-app.use("/search", require("./routes/searchRouter"));
-
 // hien thi trang chi tiet
-
+app.use("/search", require("./routes/searchRouter"));
+app.use("/product", require("./routes/productRoutes"));
+app.use("/sale", require("./routes/saleRoutes"));
+app.use("/shoppingCart", require("./routes/shoppingCartRoutes"));
 // start server
 app.set("port", process.env.PORT || 3000);
 app.listen(app.get("port"), () => {
