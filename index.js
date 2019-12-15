@@ -1,6 +1,7 @@
 var express = require("express");
 var app = express();
-var bodyParser = require('body-parser')
+
+var bodyParser = require('body-parser');
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -8,6 +9,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 app.use(bodyParser.json())
     //Setting for app here
+
 app.use(express.static(__dirname));
 
 var expressHbs = require("express-handlebars");
@@ -20,6 +22,7 @@ var hbs = expressHbs.create({
 });
 app.engine("hbs", hbs.engine);
 app.set("view engine", "hbs");
+
 
 
 //Use Body Parser
@@ -47,6 +50,7 @@ app.use((req, res, next) => {
     next();
 });
 
+
 // Create database
 var models = require("./models");
 app.get("/sync", function(req, res) {
@@ -55,7 +59,7 @@ app.get("/sync", function(req, res) {
     });
 });
 
-//
+
 // hien thi trang chu
 app.use("/", require("./routes/indexRouter"));
 app.use("/cart", require("./routes/shoppingCartRouter"));

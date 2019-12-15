@@ -17,7 +17,9 @@ router.post('/signUp', (req, res, next)=>{
   };
   let confirmPassword= req.body.confirmPassword;
   let keepLoggedIn = (req.body.keepLoggedIn!= undefined);
-
+  console.log(req.body);
+  console.log(user.password);
+  console.log(confirmPassword);
   //Kiem tra confirmpassword va password
   if( user.password != confirmPassword){
     return res.render('signUp', {
@@ -27,8 +29,8 @@ router.post('/signUp', (req, res, next)=>{
   };
   //Kiem tra user name valid
   userController
-    .getUserByEmail(user.username)
-    .then(user=>{
+  .getUserByEmail(user.username)
+  .then(user=>{
       if(user){
         return res.render('signUp', {
           message: `Email ${user.username} exists`,
