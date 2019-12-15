@@ -31,6 +31,7 @@ controller.getById = function(id) {
         sneaker
             .findOne({
                 where: { id: id },
+                include: [{ model: models.Size }]
             })
             .then(result => resolve(result))
             .catch(error => reject(new Error(error)));

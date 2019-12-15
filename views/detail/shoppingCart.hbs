@@ -73,7 +73,9 @@
             <div class="col-lg-2 product-quantity">Số lượng</div>
             <div class="col-lg-2 product-subtotal">Tạm tính</div>
         </div>
+        {{#with cart}}
         <div class="products">
+            {{#each items}}
             <div class="row">
                 <div class="col-lg-1 product-remove">
                     <img src="../public/img/remove_icon.png" alt="" style="width:50px; height:50px;margin-top: 10px;">
@@ -82,29 +84,19 @@
                     <img src="../public/img/sneaker_chuck_white.jpg" alt="" style="width:75px; height:75px">
                 </div>
 
-                <div class="col-lg-3 product-name">CV CHuck 70 High Top White - 42</div>
-                <div class="col-lg-2 product-price">1,090,000 đ</div>
-                <div class="col-lg-2 product-quantity">Số lượng</div>
-                <div class="col-lg-2 product-subtotal">1,090,000 đ</div>
+                <div class="col-lg-3 product-name">{{item.name}}</div>
+                <div class="col-lg-2 product-price">{{item.price}} đ</div>
+                <div class="col-lg-2 product-quantity">
+                    <input type="button" value="-" class="button-minus" data-field="quantity" onclick="var result = document.getElementById('sst{{item.id}}'); var sst=result.value; if(!isNaN(sst)) result.value++; updateCart({{item.id}},result.value); return false;">
+                    <input type="number" step="1" max="" value={{quantity}} name="quantity" class="quantity-field" id="sst{{item.id}}" style="width: 50px;" readonly>
+                    <input type="button" value="+" class="button-plus" data-field="quantity" onclick="var result = document.getElementById('sst{{item.id}}'); var sst=result.value; if(!isNaN(sst)) result.value++; updateCart({{item.id}},result.value); return false;">
+                </div>
+                <div class="col-lg-2 product-subtotal">{{price}} đ</div>
 
             </div>
-            <div class="row">
-                <div class="col-lg-1 product-remove">
-                    <img src="../public/img/remove_icon.png" alt="" style="width:50px; height:50px;margin-top: 10px;">
-
-                </div>
-                <div class="col-lg-2 product-thumbnail">
-                    <img src="../public/img/airmax_phantom.jpg" alt="" style="width:75px; height:75px">
-
-                </div>
-
-                <div class="col-lg-3 product-name">Air max 1 shadow Phantom - 37</div>
-                <div class="col-lg-2 product-price">1,290,000 đ</div>
-                <div class="col-lg-2 product-quantity">1</div>
-                <div class="col-lg-2 product-subtotal">1,290,000 đ</div>
-
-            </div>
+            {{/each}}
         </div>
+        {{/with}}
         <div class="row addCoupon">
             <div class="col-lg-9 coupon">
                 <input type="text" name="coupon_code" class="input-text" id="coupon_code" value=""
