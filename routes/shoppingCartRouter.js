@@ -22,4 +22,20 @@ router.post('/', (req, res, next) => {
         .catch(error => next(error));
 });
 
+router.put('/', (req, res) => {
+    var productID = req.body.id;
+    var quantity = parseInt(req.body.quantity);
+    var cartItem = req.session.cart.update(productID, quantity);
+    res.json(cartItem);
+})
+
+router.delete('/', (req, res) => {
+    var productID = req.body.id;
+    req.session.cart.remove(productID);
+    res.json({
+        totalQuantity: req.session.cart.totalQuantiry,
+        totelPrice: req.session.cart.totalPrice
+    });
+});
+
 module.exports = router;
