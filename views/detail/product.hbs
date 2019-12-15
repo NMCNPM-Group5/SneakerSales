@@ -66,51 +66,26 @@
     </div>
   </div>
   {{/with}}
+ 
   <div class="row" id="product-suggest">
     <h3>Sản phẩm tương tự:</h3>
     <div class="row">
+      {{#each same}}
       <div class="col-md-4">
         <div class="card">
           <img class="card-img-top" src="/public/img/Air-Jordan-1-Retro-High-Off-White-Chicago-Product.jpg"
             alt="Card image cap">
           <div class="card-body">
-            <h3 class="card-title">Air J.ordan 1 x Off-White x Retro High OG Chicago</h3>
+            <h3 class="card-title">{{name}}</h3>
             <div class="row" id="price">
               <h5>GIÁ:</h5>
-              <p id="old-price card-text">1,790,000₫</p>
-              <p id="new-price card-text">1,253,000₫</p>
+              <p id="old-price card-text">{{price}}₫</p>
+              <p id="new-price card-text">{{price}}₫</p>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="card">
-          <img class="card-img-top" src="/public/img/Air-Jordan-1-Retro-High-Off-White-Chicago-Product.jpg"
-            alt="Card image cap">
-          <div class="card-body">
-            <h3 class="card-title">Air J.ordan 1 x Off-White x Retro High OG Chicago</h3>
-            <div class="row" id="price">
-              <h5>GIÁ:</h5>
-              <p id="old-price card-text">1,790,000₫</p>
-              <p id="new-price card-text">1,253,000₫</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card">
-          <img class="card-img-top" src="/public/img/Air-Jordan-1-Retro-High-Off-White-Chicago-Product.jpg"
-            alt="Card image cap">
-          <div class="card-body">
-            <h3 class="card-title">Air J.ordan 1 x Off-White x Retro High OG Chicago</h3>
-            <div class="row" id="price">
-              <h5>GIÁ:</h5>
-              <p id="old-price card-text">1,790,000₫</p>
-              <p id="new-price card-text">1,253,000₫</p>
-            </div>
-          </div>
-        </div>
-      </div>
+      {{/each}}
     </div>
   </div>
 </div>

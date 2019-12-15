@@ -16,6 +16,10 @@ router.get("/:id", (req, res, next) => {
         .getById(req.params.id)
         .then(result => {
             res.locals.sneaker = result;
+            return sneakerController.getByBrand(result.brandName);
+        })
+        .then(result => {
+            res.locals.same = result;
             res.render("detail/product");
         })
         .catch(error => {
