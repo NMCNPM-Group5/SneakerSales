@@ -42,6 +42,7 @@ controller.getByBrand = function(brandName) {
         sneaker
             .findAll({
                 where: { brandName: brandName },
+                limit: 3
             })
             .then(result => resolve(result))
             .catch(error => reject(new Error(error)));
