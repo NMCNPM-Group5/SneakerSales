@@ -1,6 +1,12 @@
 var express = require("express");
 var app = express();
+var bodyParser = require('body-parser')
 
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }))
+
+// parse application/json
+app.use(bodyParser.json())
 //Setting for app here
 app.use(express.static(__dirname));
 
@@ -31,8 +37,7 @@ app.use("/search", require("./routes/searchRouter"));
 app.use("/product", require("./routes/productRoutes"));
 app.use("/sale", require("./routes/saleRoutes"));
 app.use("/shoppingCart", require("./routes/shoppingCartRoutes"));
-app.use("/login", require("./routes/loginRoutes"));
-app.use("/signUp", require("./routes/signUpRoutes"));
+app.use("/user", require("./routes/UserRouter"));
 // start server
 app.set("port", process.env.PORT || 3000);
 app.listen(app.get("port"), () => {
