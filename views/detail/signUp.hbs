@@ -1,0 +1,59 @@
+    <link rel="stylesheet" href="css/Login.css">
+
+
+    <div id="includedHeader"></div>
+    <div class="Login">
+
+      <div class="class=container-fluid">
+        <div class="row ">
+
+          <div class="col-4 "></div>
+          <div class="col-4 login_Form ">
+            <form style="margin-top:0%;" action="/user/signUp" id="signUpForm" method="POST">
+              {{#if message}}
+              <div class="form-group alert {{type}}">
+                <strong>{{message}}</strong>
+              </div>
+              {{/if}}
+              <div class="form-group ">
+                <label for="fullname ">Tên </label>
+                <input type="text" class="form-control " id="fullname" placeholder="Nhập tên ">
+                <small id="emailHelp " class="form-text text-muted ">Chúng tôi sẽ không bao giờ tiết lộ danh tính của bạn.</small>
+              </div>
+              <div class="form-group ">
+                <label for="password ">Mật khẩu</label>
+                <input type="password" id="password" class="form-control validate" placeholder="Nhập mật khẩu">
+              </div>
+              <div class="form-group ">
+                <label for="confirmPassword ">Xác nhận lại mật khẩu</label>
+                <input type="password" id="confirmPassword" class="form-control validate"
+                  placeholder="Nhập lại mật khẩu">
+              </div>
+              <div class="form-group ">
+                <label for="username ">Email sinh viên / giảng viên</label>
+                <input type="email " class="form-control " id="username " aria-describedby="emailHelp "
+                  placeholder="Enter email ">
+              </div>
+              <div class="row">
+                <div class="col-7">
+                  <input type="checkbox" id="keepLoggedIn" name="keepLoggedIn">
+                  <label for="keepLoggedIn">Keep me logged in</label>
+                </div>
+                <div class="col-5">
+                  <button type="submit " class="btn btn-primary " style="float: right;" value="Submit">Dang ki
+                    {{!-- <a href="/index"
+                                        style="color:white;text-decoration:none;">Đăng kí</a> --}}
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>

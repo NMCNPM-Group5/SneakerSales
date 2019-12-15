@@ -5,12 +5,13 @@
       <img src="/public/img/Air-Jordan-1-Retro-High-Off-White-Chicago-Product.jpg"
         class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="snker">
     </div>
+    {{#with sneaker}}
     <div class="col-md-7">
-      <h3 id="title">Air J.ordan 1 x Off-White x Retro High OG Chicago</h3>
+      <h3 id="title">{{name}}</h3>
       <div class="row" id="price">
         <h5>GIÁ:</h5>
-        <p id="old-price">1,790,000₫</p>
-        <p id="new-price">1,253,000₫</p>
+        <p id="old-price">{{price}}đ</p>
+        <p id="new-price">-{{price}}đ</p>
       </div>
       <h5>SIZE:</h5>
       <a href="#" target="_blank" rel="noopener noreferrer">Hướng dẫn chọn size</a>
@@ -19,6 +20,12 @@
           <option value="43">43</option>
           <option value="42">42</option>
           <option value="41">41</option>
+          <option value="40">40</option>
+          <option value="39">39</option>
+          <option value="38">38</option>
+          <option value="37">37</option>
+          <option value="36">36</option>
+          <option value="35">35</option>
         </select>
       </div>
       <h5>SỐ LƯỢNG</h5>
@@ -58,51 +65,31 @@
         class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="">
     </div>
   </div>
+  {{/with}}
+ 
   <div class="row" id="product-suggest">
     <h3>Sản phẩm tương tự:</h3>
     <div class="row">
+      {{#each same}}
+      
       <div class="col-md-4">
+        <a href="/product/{{id}}">
         <div class="card">
           <img class="card-img-top" src="/public/img/Air-Jordan-1-Retro-High-Off-White-Chicago-Product.jpg"
             alt="Card image cap">
           <div class="card-body">
-            <h3 class="card-title">Air J.ordan 1 x Off-White x Retro High OG Chicago</h3>
+            <h3 class="card-title">{{name}}</h3>
             <div class="row" id="price">
               <h5>GIÁ:</h5>
-              <p id="old-price card-text">1,790,000₫</p>
-              <p id="new-price card-text">1,253,000₫</p>
+              <p id="old-price card-text">{{price}}₫</p>
+              <p id="new-price card-text">{{price}}₫</p>
             </div>
           </div>
         </div>
+        </a>
       </div>
-      <div class="col-md-4">
-        <div class="card">
-          <img class="card-img-top" src="/public/img/Air-Jordan-1-Retro-High-Off-White-Chicago-Product.jpg"
-            alt="Card image cap">
-          <div class="card-body">
-            <h3 class="card-title">Air J.ordan 1 x Off-White x Retro High OG Chicago</h3>
-            <div class="row" id="price">
-              <h5>GIÁ:</h5>
-              <p id="old-price card-text">1,790,000₫</p>
-              <p id="new-price card-text">1,253,000₫</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card">
-          <img class="card-img-top" src="/public/img/Air-Jordan-1-Retro-High-Off-White-Chicago-Product.jpg"
-            alt="Card image cap">
-          <div class="card-body">
-            <h3 class="card-title">Air J.ordan 1 x Off-White x Retro High OG Chicago</h3>
-            <div class="row" id="price">
-              <h5>GIÁ:</h5>
-              <p id="old-price card-text">1,790,000₫</p>
-              <p id="new-price card-text">1,253,000₫</p>
-            </div>
-          </div>
-        </div>
-      </div>
+
+      {{/each}}
     </div>
   </div>
 </div>
