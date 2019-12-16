@@ -113,7 +113,10 @@
         <div class="row">
           {{#each sneaker}}
           <div class="col-lg-3 col-md-4 item">
-            <div class="itemImg" style="background-image: url(../public/img/sneaker/2.jpg);"></div>
+            <a href="/product/{{id}}">
+              <div class="itemImg" style="background-image: url(../public/img/sneaker/2.jpg);"></div>
+            </a>
+            
             <div class="itemName" id="itemName">
               {{name}}
             </div>
@@ -153,13 +156,14 @@
   }
 
   function colorChange(color) {
+    console.log("aaa");
     let brand = "";
     if (GetURLParameter("brand") != null)
       brand = GetURLParameter("brand");
     let size = "";
     if (GetURLParameter("size") != null)
       size = GetURLParameter("size");
-    let url = '/search?brand=' + brand + '&color=' + color + '&size=' + sizes;
+    let url = '/search?brand=' + brand + '&color=' + color + '&size=' + size;
     location.href = url;
   }
 

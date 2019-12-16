@@ -4,7 +4,7 @@ let sneaker = models.Sneaker;
 let size = models.Size;
 let Sequelize = require("sequelize");
 let Op = Sequelize.Op;
-controller.getAll = query => {
+controller.getAllFilter = query => {
   return new Promise((resolve, reject) => {
     let options = {
       //include: [{ model: models.Brand }],
