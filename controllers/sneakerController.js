@@ -108,4 +108,15 @@ controller.getAll = query => {
   });
 };
 
+controller.getByBrand = function(brandName) {
+  return new Promise((resolve, reject) => {
+    sneaker
+      .findAll({
+        where: { brandName: brandName }
+      })
+      .then(result => resolve(result))
+      .catch(error => reject(new Error(error)));
+  });
+};
+
 module.exports = controller;
