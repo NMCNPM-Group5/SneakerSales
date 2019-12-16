@@ -6,6 +6,33 @@ let router = express.Router();
 router.get("/login", (req, res) => {
   res.render("detail/login");
 });
+router.post('/login', (req, res, next)=>{
+  let email = req.body.username;
+  let password = req.body.password;
+  console.log(email);
+  console.log(password);
+  userController
+    .getUserByEmail(email)
+    .then(user=>{
+      if(user){
+        if (userController.comparePassword(password, user.password)){
+            req.session.user = user;
+            // console.log('success');
+            res.redirect('/');
+          }else{
+            res.render('detail/login', {
+                message :'password is incorect',
+                type : 'alert-danger'
+              });
+          }
+      } else{
+        res.render('detail/login', {
+          message :'password is incorect',
+          type : 'alert-danger'
+          });
+      }
+    });
+});
 router.get("/signUp", (req, res) => {
   res.render("detail/signUp");
 });
@@ -15,7 +42,7 @@ router.post('/signUp', (req, res, next)=>{
   let password= req.body.password;
   let confirmPassword= req.body.confirmPassword;
   let keepLoggedIn = (req.body.keepLoggedIn!= undefined);
-  console.log(req.body);
+  // console.log(req.body);
   // console.log(user.password);
   // console.log(confirmPassword);
   //Kiem tra confirmpassword va password
@@ -43,7 +70,7 @@ router.post('/signUp', (req, res, next)=>{
       return userController
         .createUser(user)
         .then(user =>{
-          console.log(user)
+          // console.log(user)
           if(keepLoggedIn){
             req.session.user = user;
             res.render('/')
@@ -57,5 +84,12 @@ router.post('/signUp', (req, res, next)=>{
         .catch(error=>next(error));
     });
   //tao tk
+});
+
+router.get('/logout', (req,res,next)=>{
+  req.session.destroy(error =>{
+    if(error) return next(error);
+    return res.render('/');
+  })
 });
 module.exports = router;
