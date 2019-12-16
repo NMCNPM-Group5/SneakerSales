@@ -30,7 +30,7 @@ function removeCartItem(id) {
         type: 'DELETE',
         data: { id },
         success: function(result) {
-            $('#cart-badge').html(result.totalQuantity);
+            $('#cart-badge').html(0);
             $('#totalPrice').html(result.totalPrice + "đ");
             $(`#item${id}`).remove();
         }
@@ -45,8 +45,8 @@ function updateCartItem(id, quantity) {
         data: { id, quantity },
         success: function(result) {
             $('#cart-badge').html(result.totalQuantity);
-            $('#totalPrice').html(result.totalPrice + " đ");
-            $(`#price${id}`).html(result.item.price + " đ");
+            $('#totalPrice').html(result.totalPrice + ".00 đ");
+            $(`#price${id}`).html(result.item.price + ".00 đ");
         }
     });
 }

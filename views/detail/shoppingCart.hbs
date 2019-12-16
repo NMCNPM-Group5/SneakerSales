@@ -15,7 +15,9 @@
             {{#each items}}
             <div class="row" id="item{{item.id}}">
                 <div class="col-lg-1 product-remove">
-                    <img src="../public/img/remove_icon.png" alt="" style="width:50px; height:50px;margin-top: 10px;">
+                    <button style="background: none; border:none" onclick="var result = document.getElementById('sst{{item.id}}'); var sst=result.value; if(!isNaN(sst) &amp;&amp; confirm('Do you really want to remove this item?')) result.value=0; updateCart({{item.id}},result.value); return false;">
+                        <img src="../public/img/remove_icon.png" alt="" style="width:50px; height:50px;margin-top: 10px;">
+                    </button>
                 </div>
                 <div class="col-lg-2 product-thumbnail">
                     <img src="../public/img/sneaker_chuck_white.jpg" alt="" style="width:75px; height:75px">
@@ -24,7 +26,7 @@
                 <div class="col-lg-3 product-name">{{item.name}}</div>
                 <div class="col-lg-2 product-price">{{item.price}} đ</div>
                 <div class="col-lg-2 product-quantity">
-                    <input type="button" value="-" class="button-minus" data-field="quantity" onclick="var result = document.getElementById('sst{{item.id}}'); var sst=result.value; if(!isNaN(sst)) result.value--; updateCart({{item.id}},result.value); return false;">
+                    <input type="button" value="-" class="button-minus" data-field="quantity" onclick="var result = document.getElementById('sst{{item.id}}'); var sst=result.value; if(!isNaN(sst) &amp;&amp;sst>1||(sst==1) &amp;&amp; confirm('Do you really want to remove this item?')) result.value--; updateCart({{item.id}},result.value); return false;">
                     <input type="number" step="1" max="" value={{quantity}} name="quantity" class="quantity-field" id="sst{{item.id}}" style="width: 50px;" readonly>
                     <input type="button" value="+" class="button-plus" data-field="quantity" onclick="var result = document.getElementById('sst{{item.id}}'); var sst=result.value; if(!isNaN(sst)) result.value++; updateCart({{item.id}},result.value); return false;">
                 </div>
@@ -40,7 +42,7 @@
             <div class="col-lg-9 coupon">
                 <input type="text" name="coupon_code" class="input-text" id="coupon_code" value=""
                     placeholder="Mã ưu đãi">
-                <button type="submit" class="button" name="add-coupon" value="Áp dụng" disabled="">Áp dụng</button>
+                <button type="submit" class="button" name="add-coupon" value="Áp dụng" >Áp dụng</button>
             </div>
             <div class="col-lg-3 Process">
                 <button type="submit" class="button" name="update_cart" value="Cập nhật giỏ hàng">CẬP NHẬT GIỎ
