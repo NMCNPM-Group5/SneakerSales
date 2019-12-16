@@ -22,28 +22,6 @@ var hbs = expressHbs.create({
 });
 app.engine("hbs", hbs.engine);
 app.set("view engine", "hbs");
-<<<<<<< HEAD
-//body parser
-let bodyParser = require("body-parser");
-// parse application/x-www-form-urlencoded
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-// parse application/json
-// cookie parser
-let cookieParser = require("cookie-parser");
-app.use(cookieParser());
-//session
-let session = require("express-session");
-app.use(
-  session({
-    cookie: { httpOnly: true, maxAge: 30 * 24 * 60 * 60 * 1000 },
-    secret: "s3Cret",
-    resave: false,
-    saveUninitialized: false
-  })
-);
-=======
-
 
 
 //Use Body Parser
@@ -71,8 +49,6 @@ app.use((req, res, next) => {
     next();
 });
 
-
->>>>>>> fd460c44b46cbdb8d85d09f6ac065c3180413d31
 // Create database
 var models = require("./models");
 app.get("/sync", function(req, res) {
