@@ -25,7 +25,6 @@ controller.getAll = query => {
       include: [],
       where: {}
     };
-
     if (query.brand) {
       options.where.brandName = query.brand;
     }
@@ -42,61 +41,101 @@ controller.getAll = query => {
         options.include.push({
           model: models.Size,
           attributes: ["id"],
-          where: { size35: { [Op.gt]: 0 } }
+          where: {
+            size35: {
+              [Op.gt]: 0
+            }
+          }
         });
       } else if (query.size == 36) {
         options.include.push({
           model: models.Size,
           attributes: ["id"],
-          where: { size36: { [Op.gt]: 0 } }
+          where: {
+            size36: {
+              [Op.gt]: 0
+            }
+          }
         });
       } else if (query.size == 37) {
         options.include.push({
           model: models.Size,
           attributes: ["id"],
-          where: { size37: { [Op.gt]: 0 } }
+          where: {
+            size37: {
+              [Op.gt]: 0
+            }
+          }
         });
       } else if (query.size == 38) {
         options.include.push({
           model: models.Size,
           attributes: ["id"],
-          where: { size38: { [Op.gt]: 0 } }
+          where: {
+            size38: {
+              [Op.gt]: 0
+            }
+          }
         });
       } else if (query.size == 39) {
         options.include.push({
           model: models.Size,
           attributes: ["id"],
-          where: { size39: { [Op.gt]: 0 } }
+          where: {
+            size39: {
+              [Op.gt]: 0
+            }
+          }
         });
       } else if (query.size == 40) {
         options.include.push({
           model: models.Size,
           attributes: ["id"],
-          where: { size40: { [Op.gt]: 0 } }
+          where: {
+            size40: {
+              [Op.gt]: 0
+            }
+          }
         });
       } else if (query.size == 41) {
         options.include.push({
           model: models.Size,
           attributes: ["id"],
-          where: { size41: { [Op.gt]: 0 } }
+          where: {
+            size41: {
+              [Op.gt]: 0
+            }
+          }
         });
       } else if (query.size == 42) {
         options.include.push({
           model: models.Size,
           attributes: ["id"],
-          where: { size42: { [Op.gt]: 0 } }
+          where: {
+            size42: {
+              [Op.gt]: 0
+            }
+          }
         });
       } else if (query.size == 43) {
         options.include.push({
           model: models.Size,
           attributes: ["id"],
-          where: { size43: { [Op.gt]: 0 } }
+          where: {
+            size43: {
+              [Op.gt]: 0
+            }
+          }
         });
       } else if (query.size == 44) {
         options.include.push({
           model: models.Size,
           attributes: ["id"],
-          where: { size44: { [Op.gt]: 0 } }
+          where: {
+            size44: {
+              [Op.gt]: 0
+            }
+          }
         });
       }
     }
@@ -104,6 +143,52 @@ controller.getAll = query => {
     sneaker
       .findAll(options)
       .then(data => resolve(data))
+      .catch(error => reject(new Error(error)));
+  });
+};
+controller.getAll = () => {
+  return new Promise((resolve, reject) => {
+    sneaker
+      .findAll({
+        attributes: [
+          "id",
+          "sneakerID",
+          "name",
+          "brandName",
+          "price",
+          "sizeID",
+          "imgPath",
+          "subImgPath",
+          "description",
+          "status",
+          "color",
+          "gender"
+        ]
+      })
+      .then(data => resolve(data))
+      .catch(error => reject(new Error(error)));
+  });
+};
+
+controller.getById = function(id) {
+  return new Promise((resolve, reject) => {
+    sneaker
+      .findOne({
+        where: { id: id },
+        include: [{ model: models.Size }]
+      })
+      .then(result => resolve(result))
+      .catch(error => reject(new Error(error)));
+  });
+};
+
+controller.getByBrand = function(brandName) {
+  return new Promise((resolve, reject) => {
+    sneaker
+      .findAll({
+        where: { brandName: brandName }
+      })
+      .then(result => resolve(result))
       .catch(error => reject(new Error(error)));
   });
 };
