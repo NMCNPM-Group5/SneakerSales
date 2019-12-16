@@ -24,7 +24,6 @@ app.engine("hbs", hbs.engine);
 app.set("view engine", "hbs");
 
 
-
 //Use Body Parser
 
 
@@ -49,7 +48,6 @@ app.use((req, res, next) => {
     res.locals.totalQuantity = cart.totalQuantity;
     next();
 });
-
 
 // Create database
 var models = require("./models");
