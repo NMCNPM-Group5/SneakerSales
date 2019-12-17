@@ -89,7 +89,8 @@ router.post('/signUp', (req, res, next)=>{
 router.get('/logout', (req,res,next)=>{
   req.session.destroy(error =>{
     if(error) return next(error);
-    return res.render('/');
+    return res.redirect('/user/login');
   })
 });
+
 module.exports = router;

@@ -36,14 +36,20 @@
           <a class="nav-link" href="">ABOUT</a>
         </li>
         {{#if isLoggedIn}}
-        
-        {{/if}}
+        <li class="nav-item">
+          <a class="nav-link" href="/">{{username}}</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/user/logout">Log Out</a>
+        </li>
+        {{else}}
         <li class="nav-item">
           <a class="nav-link" href="/user/signUp">ĐĂNG KÍ</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/user/login">ĐĂNG NHẬP</a>
         </li>
+        {{/if}}
       </ul>
     </div>
     <div class="quicksearch">
