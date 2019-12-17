@@ -16,6 +16,7 @@ router.post('/login', (req, res, next)=>{
     .then(user=>{
       if(user){
         if (userController.comparePassword(password, user.password)){
+            req.session.cookie.maxAge = keepLoggedIn?30 * 24 * 60 * 60 * 1000 :null;
             req.session.user = user;
             // console.log('success');
             res.redirect('/');
@@ -72,6 +73,7 @@ router.post('/signUp', (req, res, next)=>{
         .then(user =>{
           // console.log(user)
           if(keepLoggedIn){
+            req.session.cookie.maxAge = 30 * 24 * 60 * 60 * 1000;
             req.session.user = user;
             res.render('/')
           }else{
