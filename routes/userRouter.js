@@ -11,6 +11,18 @@ router.post('/login', (req, res, next)=>{
   let password = req.body.password;
   console.log(email);
   console.log(password);
+  if (email == undefined || email =='') {
+    return res.render("login", {
+      message: "Empty",
+      type: "alert-danger"
+    });
+  }
+  if (password == undefined|| password =='') {
+    return res.render("login", {
+      message: "Empty",
+      type: "alert-danger"
+    });
+  }
   userController
     .getUserByEmail(email)
     .then(user=>{
@@ -28,7 +40,7 @@ router.post('/login', (req, res, next)=>{
           }
       } else{
         res.render('detail/login', {
-          message :'password is incorect',
+          message :`no account with ${email}`,
           type : 'alert-danger'
           });
       }
