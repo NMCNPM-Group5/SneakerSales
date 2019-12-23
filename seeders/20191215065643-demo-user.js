@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
@@ -13,17 +13,18 @@ module.exports = {
       }], {});
     */
     let data = [
-    {
-      fullname: "test",
-      username: "test@gmail.com",
-      password:""
-    }
+      {
+        fullname: "test",
+        username: "test@gmail.com",
+        password: ""
+      }
     ];
     data.map(items => {
-    items.createdAt = Sequelize.literal("NOW()");
-    items.updatedAt = Sequelize.literal("NOW()");
-    return items;
-  });
+      items.createdAt = Sequelize.literal("NOW()");
+      items.updatedAt = Sequelize.literal("NOW()");
+      return items;
+    });
+    return queryInterface.bulkInsert("Users", data, {});
   },
 
   down: (queryInterface, Sequelize) => {
