@@ -6,6 +6,7 @@ let router = express.Router();
 router.get("/login", (req, res) => {
     res.render("detail/login");
 });
+
 router.post('/login', (req, res, next) => {
     let email = req.body.username;
     let password = req.body.password;
@@ -33,6 +34,47 @@ router.post('/login', (req, res, next) => {
                 });
             }
         });
+    // =======
+    // router.post('/login', (req, res, next)=>{
+    //   let email = req.body.username;
+    //   let password = req.body.password;
+    //   console.log(email);
+    //   console.log(password);
+    //   if (email == undefined || email =='') {
+    //     return res.render("login", {
+    //       message: "Empty",
+    //       type: "alert-danger"
+    //     });
+    //   }
+    //   if (password == undefined|| password =='') {
+    //     return res.render("login", {
+    //       message: "Empty",
+    //       type: "alert-danger"
+    //     });
+    //   }
+    //   userController
+    //     .getUserByEmail(email)
+    //     .then(user=>{
+    //       if(user){
+    //         if (userController.comparePassword(password, user.password)){
+    //             req.session.cookie.maxAge = req.body.keepLoggedIn ? 30 * 24 * 60 * 60 * 1000 :null;
+    //             req.session.user = user;
+    //             // console.log('success');
+    //             res.redirect('/');
+    //           }else{
+    //             res.render('detail/login', {
+    //                 message :'password is incorect',
+    //                 type : 'alert-danger'
+    //               });
+    //           }
+    //       } else{
+    //         res.render('detail/login', {
+    //           message :`no account with ${email}`,
+    //           type : 'alert-danger'
+    //           });
+    //       }
+    //     });
+    // >>>>>>> aad4b2e22a9a96d68e6bc59748980316c73a3a01
 });
 router.get("/signUp", (req, res) => {
     res.render("detail/signUp");
