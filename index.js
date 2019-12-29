@@ -68,6 +68,7 @@ app.get("/sync", function(req, res) {
 // hien thi trang chu
 app.use("/", require("./routes/indexRouter"));
 app.use("/cart", require("./routes/shoppingCartRouter"));
+app.use("/payment", require("./routes/paymentRouter"));
 // hien thi trang chi tiet
 app.use("/search", require("./routes/searchRouter"));
 app.use("/product", require("./routes/productRoutes"));
