@@ -1,0 +1,60 @@
+.carousel-item {
+    height: 100vh;
+    min-height: 350px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.column {
+    float: left;
+    width: 12.5%;
+    padding: 5px;
+}
+
+.columnT {
+    float: left;
+    width: 25%;
+    padding: 7px;
+    margin-top: 20px;
+    font-family: Roboto Mono, monospace;
+}
+
+.columnS {
+    float: left;
+    width: 33.3%;
+    padding: 2px;
+    font-family: Roboto Mono, monospace;
+}
+
+
+/* Clear floats after image containers */
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.rcorners2 {
+    border-radius: 25px;
+    border: 2px solid black;
+    padding: 20px;
+    width: 996px;
+    height: 400px;
+    margin-left: 120px;
+    font-family: Roboto Mono, monospace;
+}
+
+.imgB {
+    border-radius: 50%;
+}
+
+.p1 {
+    text-decoration: underline;
+    -webkit-text-decoration-color: white;
+    /* Safari */
+    text-decoration-color: white;
+}

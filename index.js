@@ -48,11 +48,15 @@ app.use((req, res, next) => {
     res.locals.totalQuantity = cart.totalQuantity;
 
     res.locals.username = req.session.user ? req.session.user.username : '';
+<<<<<<< Updated upstream
 
     res.locals.isLoggedIn = req.session.user ? true : false;
 
 
 
+=======
+    res.locals.isLoggedIn = req.session.user ? true : false;
+>>>>>>> Stashed changes
     next();
 });
 
@@ -70,6 +74,7 @@ app.use("/", require("./routes/indexRouter"));
 app.use("/cart", require("./routes/shoppingCartRouter"));
 app.use("/payment", require("./routes/paymentRouter"));
 // hien thi trang chi tiet
+app.use("/collection", require("./routes/collectionRouter"));
 app.use("/search", require("./routes/searchRouter"));
 app.use("/product", require("./routes/productRoutes"));
 app.use("/sale", require("./routes/saleRoutes"));
