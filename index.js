@@ -34,7 +34,7 @@ app.use(cookieParser());
 //Use session
 let session = require('express-session');
 app.use(session({
-    cookie: { httpOnly: true, maxAge: null},
+    cookie: { httpOnly: true, maxAge: null },
     secret: 'S3cret',
     resave: false,
     saveUninitialized: false
@@ -48,7 +48,15 @@ app.use((req, res, next) => {
     res.locals.totalQuantity = cart.totalQuantity;
 
     res.locals.username = req.session.user ? req.session.user.username : '';
-    res.locals.isLoggedIn = req.session.user?true:false;
+<<<<<<< Updated upstream
+
+    res.locals.isLoggedIn = req.session.user ? true : false;
+
+
+
+=======
+    res.locals.isLoggedIn = req.session.user ? true : false;
+>>>>>>> Stashed changes
     next();
 });
 
@@ -64,7 +72,9 @@ app.get("/sync", function(req, res) {
 // hien thi trang chu
 app.use("/", require("./routes/indexRouter"));
 app.use("/cart", require("./routes/shoppingCartRouter"));
+app.use("/payment", require("./routes/paymentRouter"));
 // hien thi trang chi tiet
+app.use("/collection", require("./routes/collectionRouter"));
 app.use("/search", require("./routes/searchRouter"));
 app.use("/product", require("./routes/productRoutes"));
 app.use("/sale", require("./routes/saleRoutes"));

@@ -37,7 +37,7 @@
         </div>
 
         {{!-- <div id="totalPrice"></div> --}}
-        {{/with}}
+        
         <div class="row addCoupon">
             <div class="col-lg-9 coupon">
                 <input type="text" name="coupon_code" class="input-text" id="coupon_code" value=""
@@ -50,6 +50,43 @@
             </div>
         </div>
 
+        <table class="table" >
+            
+                <tr>
+                    <th colspan="2"  style="background-color:white ;border:1px solid #A4A4A4">Tổng Tiền</th>
+                </tr>
+                <tr>
+                    <th>Tạm tính</th>
+                    <td scope="row">{{totalPrice}} đ</td>
+                </tr>
+                <tr>
+                    <th>Giao hàng</th>
+                    <td scope="row">
+                        <label class="container radio" >
+                        <input type="checkbox" checked="checked">
+                        <span class="checkmark"></span>
+                        Miễn Phí
+                        </label>
+                        <label class="container radio" >
+                        <input type="checkbox" checked="checked">
+                        <span class="checkmark"></span>
+                        Giao hàng
+                        </label>
+                    </td>
+                    
+                </tr>
+                <tr>
+                    <th>Tổng</th>
+                    <td scope="row">{{totalPrice}} đ</td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: center;">
+                        <button type="submit" class="button" name="update_cart" value="Cập nhật giỏ hàng" onclick="process();">Tiến hành dặt hàng</button>
+                    </td>
+                </tr>
+            
+        </table>
+        {{/with}}
     </div>
 </div>
 
@@ -58,15 +95,9 @@
 
 
 <script language="javascript">
-    document.getElementById("search").onclick = function () {
-        document.getElementById("quicksearch-hidden").hidden = false;
-        document.getElementById("search").hidden = true;
-    };
-
-    document.getElementById("searchClose").onclick = function () {
-        document.getElementById("quicksearch-hidden").hidden = true;
-        document.getElementById("search").hidden = false;
-    };
+    function process(){
+        window.location=`../payment`;
+    }
 </script>
 <script>
     $(".noti-badge").prepend($(".noti a").length);
