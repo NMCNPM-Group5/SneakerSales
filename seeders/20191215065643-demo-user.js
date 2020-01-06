@@ -17,6 +17,11 @@ module.exports = {
         fullname: "test",
         username: "test@gmail.com",
         password: ""
+      },
+      {
+        fullname: "test2",
+        username: "test2@gmail.com",
+        password: "$2a$10$.awhk3N2XApgWrq/R2dexej1XM3737nnQ/yM.S56KiY4R7iMVW2hG"
       }
     ];
     data.map(items => {
