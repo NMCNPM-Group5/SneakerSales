@@ -61,7 +61,7 @@
     <div class="container-fluid" >
         <div class="row">
         
-            <div class="col-lg-7 orderInfo">
+            <div class="col-md-7 orderInfo">
                 <h3 style="border-bottom: 2px solid #A4A4A4; padding-bottom: 10px;">Thanh toán và giao hàng</h3>
                 <input type="text" name="coupon_code"class="inputInfo" value="" placeholder="Họ tên*">
                 <input type="text" name="coupon_code"class="inputInfo" value="" placeholder="Điện thoại*">
@@ -75,7 +75,7 @@
                 
             </div>
             {{#with cart}}
-            
+            <div class="col-md-5">
             <table class="table">
                     <tr>
                         <th colspan="2"  style="background-color:white ;border:1px solid #A4A4A4">Thông tin đơn hàng</th>
@@ -84,8 +84,9 @@
                         <th>Thông tin đơn hàng</th>
                         <th>Tạm tính</th>
                     </tr>
+                    {{#each items}}
                     <tr>
-                        {{#each items}}
+                        
                         <td scope="row">
                             <p>
                                 {{item.name}} * {{quantity}}
@@ -96,9 +97,10 @@
                                 {{price}} đ
                             </p>
                         </td>
-                        {{/each}}
+                        
                         
                     </tr>
+                    {{/each}}
                     <tr>
                         <th>Tạm tính</th>
                         <td scope="row">{{totalPrice}} đ</td>
@@ -148,6 +150,7 @@
                     </tr>
                 
             </table>
+            </div>
             
             {{/with}}
         </div>

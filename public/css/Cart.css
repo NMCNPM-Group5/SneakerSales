@@ -59,14 +59,21 @@
     float: right;
 }
 
+.table th {
+    font-size: 18px;
+    font-weight: bold;
+}
+
 .table tr {
     border: 1px solid #A4A4A4;
+    font-size: 15px;
 }
 
 .table td {
     /* border: 1px solid black; */
     width: 200px;
     text-align: left;
+    font-size: 15px;
 }
 
 .radio {

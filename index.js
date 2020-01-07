@@ -43,6 +43,7 @@ app.use(
 //Use Cart controller
 let Cart = require("./controllers/cartController");
 app.use((req, res, next) => {
+<<<<<<< HEAD
   var cart = new Cart(req.session.cart ? req.session.cart : {});
   req.session.cart = cart;
   res.locals.totalQuantity = cart.totalQuantity;
@@ -50,6 +51,15 @@ app.use((req, res, next) => {
   res.locals.username = req.session.user ? req.session.user.username : "";
   res.locals.isLoggedIn = req.session.user ? true : false;
   next();
+=======
+    var cart = new Cart(req.session.cart ? req.session.cart : {});
+    req.session.cart = cart;
+    res.locals.totalQuantity = cart.totalQuantity;
+
+    res.locals.username = req.session.user ? req.session.user.username : '';
+    res.locals.isLoggedIn = req.session.user ? true : false;
+    next();
+>>>>>>> 4926b09bf33d0a5bd88da33cf6141983f7239ee3
 });
 
 // Create database
@@ -62,8 +72,14 @@ app.get("/sync", function(req, res) {
 
 // hien thi trang chu
 app.use("/", require("./routes/indexRouter"));
+app.get("/about", (req, res) => {
+    res.render("detail/about")
+})
 app.use("/cart", require("./routes/shoppingCartRouter"));
 app.use("/payment", require("./routes/paymentRouter"));
+app.use("/brand", require("./routes/brandRouter"));
+app.use("/collection", require("./routes/collectionRouter"));
+app.use("/order", require("./routes/orderRouter"));
 // hien thi trang chi tiet
 app.use("/collection", require("./routes/collectionRouter"));
 app.use("/search", require("./routes/searchRouter"));

@@ -1,7 +1,11 @@
 {
     "development": {
         "username": "postgres",
+<<<<<<< HEAD
         "password": "duythongminh229",
+=======
+        "password": "postgres",
+>>>>>>> 4926b09bf33d0a5bd88da33cf6141983f7239ee3
         "database": "SneakerSales",
         "host": "127.0.0.1",
         "dialect": "postgres"

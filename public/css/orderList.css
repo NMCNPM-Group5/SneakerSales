@@ -1,0 +1,27 @@
+table {
+    background-color: #EFEFEF;
+    border: 1px solid red;
+    width: 100%;
+    table-layout: fixed;
+    align-items: right;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+table th {
+    font-size: 18px;
+    background-color: white;
+    font-weight: bold;
+}
+
+table tr {
+    border: 1px solid #A4A4A4;
+    font-size: 18px;
+}
+
+table td {
+    /* border: 1px solid black; */
+    width: 200px;
+    text-align: left;
+    font-size: 18px;
+}
