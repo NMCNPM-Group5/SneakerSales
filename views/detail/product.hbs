@@ -9,12 +9,12 @@
     <div class="col-md-7">
       <h3 id="title">{{name}}</h3>
       <div class="row" id="price">
-        <h5>GIÁ:</h5>
-        <p id="old-price">{{price}}đ</p>
-        <p id="new-price">-{{price}}đ</p>
+        <h5 style="padding-left: 15px;">GIÁ:</h5>
+        
+        <p id="new-price" style="padding-top:8px; padding-left:15px">  {{price}}đ</p>
       </div>
       <h5>SIZE:</h5>
-      <a href="#" target="_blank" rel="noopener noreferrer">Hướng dẫn chọn size</a>
+      <a href="https://juno.vn/pages/huong-dan-chon-size-giay" target="_blank" rel="noopener noreferrer">Hướng dẫn chọn size</a>
       <div class="form-group">
         <select class="form-control" name="" id="size-variations">
           <option value="43">43</option>
@@ -34,11 +34,8 @@
         <input type="number" step="1" max="" value="1" name="quantity" class="quantity-field" id="sst" readonly>
         <input type="button" value="+" class="button-plus" data-field="quantity">
       </div>
-      <div class="row" id="total">
-        <h5>Tổng tiền:</h5>
-        <p>{{price}}₫</p>
-      </div>
-      <button class="add-to-cart" data-id="{{id}}">THÊM VÀO GIỎ HÀNG</button>
+     
+      <button class="add-to-cart" data-id="{{id}}" style="margin-top: 20px;">THÊM VÀO GIỎ HÀNG</button>
     </div>
   </div>
   <div class="row" id="product-review">
@@ -47,7 +44,7 @@
       <p>Size : 36, 37, 38, 39, 40, 41, 42, 43, 44 <br>
       
         Thương hiệu : {{brandName}}<br>
-        Product Cat : Apparel & Accessories > Shoe Accessories<br>
+       
         Giới : {{gender}}<br>
         Màu sắc : {{color}}<br>
       </p>
@@ -74,16 +71,16 @@
       {{#each same}}
       
       <div class="col-md-4">
-        <a href="/product/{{id}}">
+        <a href="/product/{{id}}" style=" text-decoration: none;">
         <div class="card">
           <img class="card-img-top" src="/public/img/Air-Jordan-1-Retro-High-Off-White-Chicago-Product.jpg"
             alt="Card image cap">
           <div class="card-body">
             <h3 class="card-title">{{name}}</h3>
             <div class="row" id="price">
-              <h5>GIÁ:</h5>
-              <p id="old-price card-text">{{price}}₫</p>
-              <p id="new-price card-text">{{price}}₫</p>
+              <h5 style="padding-left: 15px;">GIÁ:</h5>
+              
+              <p id="new-price card-text" style="padding-top:8px; padding-left:15px;">{{price}}₫</p>
             </div>
           </div>
         </div>

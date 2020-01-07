@@ -48,15 +48,7 @@ app.use((req, res, next) => {
     res.locals.totalQuantity = cart.totalQuantity;
 
     res.locals.username = req.session.user ? req.session.user.username : '';
-<<<<<<< Updated upstream
-
     res.locals.isLoggedIn = req.session.user ? true : false;
-
-
-
-=======
-    res.locals.isLoggedIn = req.session.user ? true : false;
->>>>>>> Stashed changes
     next();
 });
 
@@ -71,8 +63,14 @@ app.get("/sync", function(req, res) {
 
 // hien thi trang chu
 app.use("/", require("./routes/indexRouter"));
+app.get("/about", (req, res) => {
+    res.render("detail/about")
+})
 app.use("/cart", require("./routes/shoppingCartRouter"));
 app.use("/payment", require("./routes/paymentRouter"));
+app.use("/brand", require("./routes/brandRouter"));
+app.use("/collection", require("./routes/collectionRouter"));
+app.use("/order", require("./routes/orderRouter"));
 // hien thi trang chi tiet
 app.use("/collection", require("./routes/collectionRouter"));
 app.use("/search", require("./routes/searchRouter"));
