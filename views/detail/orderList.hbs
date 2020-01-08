@@ -1,26 +1,31 @@
 <link rel="stylesheet" href="../../public/css/orderList.css">
 <div class="container-fluid">
-<table>
-    <thead>
-        <tr>
-            <th>Mã đơn hàng</th>
-            <th>Ngày mua</th>
-            <th>Sản phẩm</th>
-            <th>Tổng tiền</th>
-            <th>Trạng thái đơn hàng</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><a href="/order/241447091">241447091</a></td>
-            <td>16/12/2018</td>
-            <td>Sneaker Sample 01 *3</td>
-            <td>150000.00 ₫</td>
-            <td>Đang xử lí đơn hàng</td>
-        </tr>
-       
-    </tbody>
-</table>
+    <table>
+        <thead>
+            <tr>
+                <th>Mã đơn hàng</th>
+                <th>Ngày mua</th>
+                <th>Sản phẩm</th>
+                <th>Tổng tiền</th>
+                <th>Trạng thái đơn hàng</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each order}}
+            <tr>
+                <td><a id="{{id}}" href="">{{id}}</a></td>
+                <td>{{createdAt}}</td>
+                <td>{{product}}</td>
+                <td>{{price}}</td>
+                <td>{{status}}</td>
+            </tr>
+            <script>
+                var temp = "#" + "{{id}}";
+                $(temp).attr('href', '/order/' + '{{id}}');
+            </script>
+            {{/each}}
+        </tbody>
+    </table>
 
-    
+
 </div>

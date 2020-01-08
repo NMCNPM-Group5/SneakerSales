@@ -1,59 +1,61 @@
 <link rel="stylesheet" href="../../public/css/orderDetail.css">
 <div class="container-fluid">
-    
-        <div class="styles__StyledAccountOrderDetail-rpj19k-2 ckZevZ">
-        <div class="heading"><span><h3>Chi tiết đơn hàng #241447091</h3></span><span class="split"</span>
-        <div class="created-date">Ngày đặt hàng: 12:10 16/12/2018</div>        
-        
-        <div class="container-fluid info">
-            <div class="col-md-4 cinfo" style="padding-left: 0px;">
-                <h3 class="title">Địa chỉ người nhận</h3>
-                <div class="content">
-                    <p class="name">Phù Vĩnh Hùng</p>
-                    <p class="address"><span>Địa chỉ: </span>97, ký con, Phường Nguyễn Thái Bình, Quận 1, Hồ Chí Minh,
-                        Việt Nam</p>
-                    <p class="phone"><span>Điện thoại: </span>0908144880</p>
-                </div>
-            </div>
-            
-            
-            <div class="col-md-3 cinfo">
-                <h3 class="title">Hình thức giao hàng</h3>
-                <div class="content">
-                    <p>Giao trước 15:00 ngày 16/12/2018</p>
-                    <p>Phí vận chuyển: 29.000đ</p>
-                </div>
-            </div>
+    {{#with order}}
+    <div class="styles__StyledAccountOrderDetail-rpj19k-2 ckZevZ">
+        <div class="heading">
+            <span>
+                <h3>Chi tiết đơn hàng # {{id}} </h3>
+            </span>
+            <span class="split"></span>
+            <div class="created-date">Ngày đặt hàng: {{createdAt}}</div>
 
-            <div class="col-md-3 cinfo">
-                <h3 class="title">Hình thức thanh toán</h3>
-                <div class="content">
-                    <p>Thanh toán tiền mặt khi nhận hàng</p>
-                </div>
-            </div>
-
-            <div class="col-md-2 cinfo">
-            <h3 class="title">Trạng Thái</h3>
-            <div class="content">
-                <div class="notifications">
-                    <div class="notifications__item">
-                        
-                        <div class="comment">Đã Giao Hàng</div>
+            <div class="container-fluid info">
+                <div class="col-md-4 cinfo" style="padding-left: 0px;">
+                    <h3 class="title">Người nhận</h3>
+                    <div class="content">
+                        <p class="name">{{guestName}}</p>
+                        <p class="address"><span>Địa chỉ: </span> {{guestAddress}}, {{guestCity}}</p>
+                        <p class="phone"><span>Điện thoại: </span>{{guestPhone}}</p>
                     </div>
                 </div>
+
+
+                <div class="col-md-3 cinfo">
+                    <h3 class="title">Hình thức giao hàng</h3>
+                    <div class="content">
+                        <p>{{note}}</p>
+                        <p>Phí vận chuyển: 30.000đ</p>
+                    </div>
+                </div>
+
+                <div class="col-md-3 cinfo">
+                    <h3 class="title">Hình thức thanh toán</h3>
+                    <div class="content">
+                        <p>Thanh toán tiền mặt khi nhận hàng</p>
+                    </div>
+                </div>
+
+                <div class="col-md-2 cinfo">
+                    <h3 class="title">Trạng Thái</h3>
+                    <div class="content">
+                        <div class="notifications">
+                            <div class="notifications__item">
+
+                                <div class="comment">{{status}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
 
-        </div>
-    </div>
-    
         <table class="styles__StyledProductList-rpj19k-3 kmKglE">
             <thead>
                 <tr>
                     <th style="width: 100px;"></th>
                     <th>Sản phẩm</th>
                     <th>Giá</th>
-                    <th>Số lượng</th>
                     <th>Giảm giá</th>
                     <th>Tạm tính</th>
                 </tr>
@@ -61,42 +63,49 @@
             <tbody>
                 <tr>
                     <td class="thumnail">
-                        <img
-                                src="/public/img/Air-Jordan-1-Retro-High-Off-White-Chicago-Product.jpg"
-                                alt="Đàn Kalimba W.I cao cấp 17 phím, Thumb Piano 17 keys - Full phụ kiện- Nhập khẩu Hàn Quốc"
-                                style="width: 50px;heightL 50px">
+                        <img src="/public/img/Air-Jordan-1-Retro-High-Off-White-Chicago-Product.jpg"
+                            alt="Đàn Kalimba W.I cao cấp 17 phím, Thumb Piano 17 keys - Full phụ kiện- Nhập khẩu Hàn Quốc"
+                            style="width: 50px;heightL 50px">
                     </td>
                     <td>
                         <div class="product-item">
-                            <div class="product-info"><a class="product-name"
-                                    href="/dan-kalimba-w-i-cao-cap-17-phim-thumb-piano-17-keys-full-phu-kien-nhap-khau-han-quoc-p5755211.html">                                   Sneaker Sample 01</a>
+                            <div class="product-info">
+                                <p class="product-name">
+                                    {{product}}</p>
                             </div>
                         </div>
                     </td>
-                    <td class="price">150000.00 ₫</td>
-                    <td class="quantity">3</td>
+                    <td class="price">{{price}} ₫</td>
                     <td class="discount-amount">0 ₫</td>
-                    <td class="raw-total">150000.000 ₫</td>
+                    <td class="raw-total">{{price}} ₫</td>
                 </tr>
             </tbody>
             <tfoot>
-                
                 <tr>
-                    <td></td>
+
                     <td colspan="4"><span>Tạm tính</span></td>
-                    <td>150000.00 ₫</td>
+                    <td>{{price}} ₫</td>
                 </tr>
                 <tr>
-                    <td></td>
+
                     <td colspan="4"><span>Phí vận chuyển</span></td>
-                    <td>29.000 ₫</td>
+                    <td>30.000 ₫</td>
                 </tr>
                 <tr>
-                    <td></td>
+
                     <td colspan="4"><span>Tổng cộng</span></td>
-                    <td><span class="sum">179000.00 ₫</span></td>
+                    <td><span class="sum" id={{id}}>a</span></td>
                 </tr>
+                <script>
+                    var temp = "#" + "{{id}}";
+                    var temp2 = parseInt("{{price}}");
+                    var total = temp2 + 30000;
+                    $(temp).html(total + " ₫");
+
+                </script>
             </tfoot>
         </table><a class="view-list-order" href="/order">&lt;&lt; Quay lại đơn hàng của tôi</a>
+        {{/with}}
     </div>
+
 </div>

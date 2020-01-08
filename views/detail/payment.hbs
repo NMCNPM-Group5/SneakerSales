@@ -1,84 +1,122 @@
 <link rel="stylesheet" href="../../public/css/payment.css">
 <div class="container-fluid">
-<h2 style="border-bottom: 3px solid red; padding-bottom: 10px;">Thông tin khách hàng</h2>
-<p>
-  Bạn đã có tài khoản?
-  <a data-toggle="collapse" href="#customerInfo" role="button" aria-expanded="false" aria-controls="collapseExample" style="text-decoration: none;">
-    Ấn vào đây để đăng nhập
-  </a>
-</p>
-<div class="collapse" id="customerInfo">
-  <div class="card card-body">
-    <div class="row">
-        <div class="col-lg-6">
-            <p>Tên đăng nhập hoặc email <red>*</red></p>
-            <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="" style="width:90%">
+    <h2 style="border-bottom: 3px solid red; padding-bottom: 10px;">Thông tin khách hàng</h2>
+    <p>
+        Bạn đã có tài khoản?
+        <a data-toggle="collapse" href="#customerInfo" role="button" aria-expanded="false"
+            aria-controls="collapseExample" style="text-decoration: none;">
+            Ấn vào đây để đăng nhập
+        </a>
+    </p>
+    <div class="collapse" id="customerInfo">
+        <div class="card card-body">
+            <div class="row">
+                <div class="col-lg-6">
+                    <p>Tên đăng nhập hoặc email <red>*</red>
+                    </p>
+                    <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder=""
+                        style="width:90%">
+                </div>
+
+                <div class="col-lg-6">
+                    <p>Mật khẩu <red>*</red>
+                    </p>
+                    <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder=""
+                        style="width:90%">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3">
+                    <button type="submit" class="button" name="add-coupon" value="Áp dụng"
+                        style="width=20%; margin-top: 10px;margin-bottom:10px;">Đăng nhập</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3">
+                    <a href="" style="text-decoration: non;color: red">Quên mật khẩu?</a>
+                </div>
+            </div>
+
         </div>
-        
-        <div class="col-lg-6">
-            <p>Mật khẩu <red>*</red></p>
-            <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="" style="width:90%">
+    </div>
+
+    <h2 style="border-bottom: 3px solid red; padding-bottom: 10px;"></h2>
+    <p>
+        Bạn có mã giảm giá?
+        <a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
+            aria-controls="collapseExample" style="text-decoration: none;">
+            Ấn vào đây để nhập mã
+        </a>
+    </p>
+    <div class="collapse" id="collapseExample">
+        <div class="card card-body">
+            <div class="row">
+                <div class="col-lg-6">
+                    <p>Nếu bạn có mã giảm giá, hãy nhập bên dưới
+                    </p>
+                    <input type="text" name="coupon_code" class="input-text" id="coupon_code" value=""
+                        placeholder="Mã ưu đãi">
+                    <button type="submit" class="button" name="add-coupon" value="Áp dụng">Áp dụng</button>
+                </div>
+
+            </div>
+
         </div>
     </div>
-    <div class="row">
-        <div class="col-lg-3">
-    <button type="submit" class="button" name="add-coupon" value="Áp dụng" style="width=20%; margin-top: 10px;margin-bottom:10px;">Đăng nhập</button>
-    </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-3">
-            <a href="" style="text-decoration: non;color: red">Quên mật khẩu?</a>
-    </div>
-    </div>
-    
-  </div>
 </div>
 
-<h2 style="border-bottom: 3px solid red; padding-bottom: 10px;"></h2>
-<p>
-  Bạn có mã giảm giá?
-  <a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" style="text-decoration: none;">
-    Ấn vào đây để nhập mã
-  </a>
-</p>
-<div class="collapse" id="collapseExample">
-  <div class="card card-body">
-    <div class="row">
-        <div class="col-lg-6">
-            <p>Nếu bạn có mã giảm giá, hãy nhập bên dưới
-            </p>
-             <input type="text" name="coupon_code" class="input-text" id="coupon_code" value=""
-                    placeholder="Mã ưu đãi">
-                <button type="submit" class="button" name="add-coupon" value="Áp dụng" >Áp dụng</button>
-        </div>
-        
-    </div>
-      
-  </div>
-</div>
-</div>
 <div class="cartInfo">
-    <div class="container-fluid" >
+    <div class="container-fluid">
         <div class="row">
-        
-            <div class="col-md-7 orderInfo">
-                <h3 style="border-bottom: 2px solid #A4A4A4; padding-bottom: 10px;">Thanh toán và giao hàng</h3>
-                <input type="text" name="coupon_code"class="inputInfo" value="" placeholder="Họ tên*">
-                <input type="text" name="coupon_code"class="inputInfo" value="" placeholder="Điện thoại*">
-                <input type="text" name="coupon_code"class="inputInfo" value="" placeholder="Địa chỉ*">
-                <input type="text" name="coupon_code"class="inputInfo" value="" placeholder="Thành Phố*">
-                <input type="text" name="coupon_code"class="inputInfo" value="" placeholder="Email*">
 
-                <h3 style="border-bottom: 2px solid #A4A4A4; padding-bottom: 10px; margin-top: 100px">Thông tin bổ sung</h3>
-                <input type="text" name="coupon_code"class="inputInfo" value="" placeholder="Ghi chú về sản phẩm, vân vân">
-                
-                
+            <div class="col-md-7 orderInfo">
+                {{#if message}}
+                <div class="form-group alert {{type}}">
+                    <strong>{{message}}</strong>
+                </div>
+                {{/if}}
+                <form action="/payment" method="POST">
+                    <h3 style="border-bottom: 2px solid #A4A4A4; padding-bottom: 10px;">Thanh toán và giao hàng</h3>
+                    <input type="text" name="name" class="inputInfo" value="" placeholder="Họ tên*">
+                    <input type="text" name="phone" class="inputInfo" value="" placeholder="Điện thoại*">
+                    <input type="text" name="address" class="inputInfo" value="" placeholder="Địa chỉ*">
+                    <input type="text" name="city" class="inputInfo" value="" placeholder="Thành Phố*">
+                    <input type="text" name="email" class="inputInfo" value="" placeholder="Email*">
+                    <input type="text" name="product" id="product">
+                    <input type="text" name="price" id="price">
+
+                    {{#with cart}}
+                    <script>
+                        var temp = "";
+                    </script>
+                    {{#each items}}
+                    <script>
+                        temp += "{{item.name}} * {{quantity}}, ";
+                    </script>
+                    {{/each}}
+                    <script>
+                        $('#product').val(temp);
+                        $('#price').val("{{totalPrice}}");
+
+                        $('#product').hide();
+                        $('#price').hide();
+                    </script>
+                    {{/with}}
+
+                    <h3 style="border-bottom: 2px solid #A4A4A4; padding-bottom: 10px; margin-top: 80px">Thông tin bổ
+                        sung
+                    </h3>
+                    <input type="text" name="note" class="inputInfo" value=""
+                        placeholder="Ghi chú về sản phẩm, vân vân">
+
+                    <button type="submit" value="submit">Đặt hàng</button>
+                </form>
             </div>
             {{#with cart}}
             <div class="col-md-5">
-            <table class="table">
+                <table class="table">
                     <tr>
-                        <th colspan="2"  style="background-color:white ;border:1px solid #A4A4A4">Thông tin đơn hàng</th>
+                        <th colspan="2" style="background-color:white ;border:1px solid #A4A4A4">Thông tin đơn hàng</th>
                     </tr>
                     <tr>
                         <th>Thông tin đơn hàng</th>
@@ -86,7 +124,7 @@
                     </tr>
                     {{#each items}}
                     <tr>
-                        
+
                         <td scope="row">
                             <p>
                                 {{item.name}} * {{quantity}}
@@ -97,8 +135,8 @@
                                 {{price}} đ
                             </p>
                         </td>
-                        
-                        
+
+
                     </tr>
                     {{/each}}
                     <tr>
@@ -108,19 +146,19 @@
                     <tr>
                         <th>Giao hàng</th>
                         <td scope="row">
-                            <label class="container radio" >
-                            <input type="checkbox" checked="checked">
-                            <span class="checkmark"></span>
-                            Miễn Phí
+                            <label class="container radio">
+                                <input type="checkbox" checked="checked">
+                                <span class="checkmark"></span>
+                                Miễn Phí
                             </label>
-                            <label class="container radio" >
-                            <input type="checkbox" checked="checked">
-                            <span class="checkmark"></span>
-                            Giao hàng
+                            <label class="container radio">
+                                <input type="checkbox" checked="checked">
+                                <span class="checkmark"></span>
+                                Giao hàng
                             </label>
                             <p>Tùy chọn giao hàng sẽ được cập nhật trong quá trình thanh toán</p>
                         </td>
-                        
+
                     </tr>
                     <tr>
                         <th>Tổng</th>
@@ -130,28 +168,29 @@
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <label class="container radio" >
-                            <input type="checkbox" checked="checked">
-                            <span class="checkmark"></span>
-                            Thanh toán khi nhận hàng (COD)
+                            <label class="container radio">
+                                <input type="checkbox" checked="checked">
+                                <span class="checkmark"></span>
+                                Thanh toán khi nhận hàng (COD)
                             </label>
-                            <label class="container radio" >
-                            <input type="checkbox" checked="checked">
-                            <span class="checkmark"></span>
-                            Chuyển khoản ngân hàng
+                            <label class="container radio">
+                                <input type="checkbox" checked="checked">
+                                <span class="checkmark"></span>
+                                Chuyển khoản ngân hàng
                             </label>
-                            
+
                         </td>
                     </tr>
                     <tr>
                         <td colspan="2" style="text-align: center;">
-                            <button type="submit" class="button" name="update_cart" value="Cập nhật giỏ hàng">Đặt hàng</button>
+                            <button type="submit" class="button" name="update_cart" value="Cập nhật giỏ hàng">Đặt
+                                hàng</button>
                         </td>
                     </tr>
-                
-            </table>
+
+                </table>
             </div>
-            
+
             {{/with}}
         </div>
     </div>
