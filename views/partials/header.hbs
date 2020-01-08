@@ -1,18 +1,22 @@
 <div class="container-fluid" id="header">
   <div class="row" style="position: relative; border-bottom-style: solid; border-width: 1px;">
 
-    <h1 style="font-family: 'Roboto Mono', monospace;margin-left: 0;margin-right: 0;font-size: 35px;color:#15017E;"><img src="../public/img/logoSneaker.png" style="margin-top: -10px;width: 70px; height: 70px;">SNEAKERS SALES WEBSITE</h1>
+    <h1 style="font-family: 'Roboto Mono', monospace;margin-left: 0;margin-right: 0;font-size: 35px;color:#15017E;"><img
+        src="../public/img/logoSneaker.png" style="margin-top: -10px;width: 70px; height: 70px;">SNEAKERS SALES WEBSITE
+    </h1>
     <!--<h5 style="margin-top: 5px; margin-left: 15px">Đại học Khoa học tự nhiên<br>Khoa Công nghệ
                         thông tin
                     </h5> -->
     <div></div>
     <div class="CartButton" style=" position: absolute; right: 0; z-index: 1;">
-        <button id="shoppingCart-button" style="background:none;"><i class="ti-shopping-cart"></i><span class="nav-shop__circle" id="cart-badge" style="float:right; color:black; font-size: 15px">{{totalQuantity}}</span>
+      <button id="shoppingCart-button" style="background:none;"><i class="ti-shopping-cart"></i><span
+          class="nav-shop__circle" id="cart-badge"
+          style="float:right; color:black; font-size: 15px">{{totalQuantity}}</span>
         <a href="/shoppingcart">
           <img src="../../public/img/Icon_Cart.png" alt="Shopping cart" style="width: 50px; height:50px;">
         </a>
-        </button>
-        
+      </button>
+
     </div>
   </div>
 
@@ -31,6 +35,12 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/collection">COLLECTION</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/search">TÌM KIẾM</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/sale">KHUYẾN MÃI</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/about">ABOUT</a>
@@ -61,9 +71,10 @@
       </button>
     </div>
     <div class="" id="quicksearch-hidden" hidden=true>
-      <div class="input-group">
-        <input type="text" class="form-control" id="searchInput">
-        <div class="input-group-append">
+      <div class="input-group row" style="display:flex">
+        <input type="text" class="form-control col-7" id="searchInput">
+        <button class="btn-primary col-3" id="searchBtn">Search</button>
+        <div class="input-group-append col-2">
           <a class="input-group-text" href="#" id="searchClose">
             <img src="img/search_button.png" alt=""><img src="../public/img/Icon_close.jpg" alt=""
               style="width: 20px;height: 20px;">

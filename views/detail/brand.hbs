@@ -1,43 +1,140 @@
-<body>
+<script>
+    let brandName = [];
+    let brandDescription = [];
+</script>
+<div class="container-fluid ">
+    <div style="margin-top: 10px;margin-bottom: 0px ;margin-left: -10px;font-size: 18px  ;font-family: Roboto Mono">
+        <div class="dropdown show">
+            <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Nike
+            </a>
 
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                {{#each brand}}
+                <a class="dropdown-item" href="" id="{{id}}">{{name}}</a>
+                <script>
+                    brandName.push("{{name}}");
+                    brandDescription.push("{{description}}");
+                </script>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</div>
 
+<div class="container-fluid" style="margin-top: 10px;" id="des">
+    <p style="font-family: Roboto Mono">
 
+    </p>
 
-    <div class="container-fluid ">
-        <div style="margin-top: 10px;margin-bottom: 0px ;margin-left: -10px;font-size: 18px  ;font-family: Roboto Mono">
-            <div class="dropdown show">
-                <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">
-                    NIKE
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="columnT">
+            <div class="view overlay">
+                <a href=""><img src="../public/img/sneaker/7-350x350.png" class="img-fluid " alt="Mountains"
+                        style="width:100%">
+                    <div class="mask flex-center rgba-red-strong">
+                        <p class="white-text" href="">View more</p>
+                    </div>
                 </a>
 
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <a class="dropdown-item" href="">ADIDAS</a>
-                    <a class="dropdown-item" href="">CONVERSE</a>
-                    <a class="dropdown-item" href="">PUMA</a>
-                </div>
             </div>
+            <div style="margin-top: 20px;">
+                <p align="center">AIR MAX 97 Collection
+                </p>
+            </div>
+
         </div>
-    </div>
+        <div class="columnT">
+            <div class="view overlay">
+                <a href=""><img src="../public/img/sneaker/product_template_91523.jpeg" class="img-fluid "
+                        alt="Mountains" style="width:100%">
+                    <div class="mask flex-center rgba-red-strong">
+                        <p class="white-text" href="">View more</p>
+                    </div>
+                </a>
 
-    <div class="container-fluid" style="margin-top: 10px;">
-        <p style="font-family: Roboto Mono">
-            NIKE chính là cái tên lớn nhất trong ngành giày thể thao trên toàn thế giới. Nhờ vào những sáng tạo trong
-            phong cách và luôn luôn đi đầu trong việc nắm bắt xu hướng thời trang thể thao và streetwear. Nike đã khẳng
-            định tên tuổi mình như một tượng đài
-            bất diệt trong lòng người hâm mộ toàn cầu. Những dòng giày Nike rất được ưa chuộng tại Việt Nam như: Nike
-            air max 97, air max 270, air max 95, air force 1, air jordan, air uptempo. Cùng xem qua những mẫu giày nike
-            đang có mặt tại cửa hàng
-            Sneaker Sales.
-        </p>
+            </div>
+            <div style="margin-top: 20px;">
+                <p align="center">AIR MAX 98 Collection
+                </p>
+            </div>
 
-    </div>
+        </div>
+        <div class="columnT">
+            <div class="view overlay">
+                <a href=""><img src="../public/img/sneaker/product_template_91565.jpeg" class="img-fluid "
+                        alt="Mountains" style="width:100%">
+                    <div class="mask flex-center rgba-red-strong">
+                        <p class="white-text" href="">View more</p>
+                    </div>
+                </a>
 
-    <div class="container-fluid">
-        <div class="row">
+            </div>
+            <div style="margin-top: 20px;">
+                <p align="center">AIR MAX 270 Collection
+                </p>
+            </div>
+
+        </div>
+        <div class="columnT">
+            <div class="view overlay">
+                <a href=""><img src="../public/img/sneaker/download.jpeg" class="img-fluid " alt="Mountains"
+                        style="width:100%">
+                    <div class="mask flex-center rgba-red-strong">
+                        <p class="white-text" href="">View more</p>
+                    </div>
+                </a>
+
+            </div>
+            <div style="margin-top: 20px;">
+                <p align="center">AIR JORDAN Collection
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="row" style="margin-left:0px;">
             <div class="columnT">
                 <div class="view overlay">
-                    <a href=""><img src="../public/img/sneaker/7-350x350.png" class="img-fluid " alt="Mountains"
+                    <a href=""><img src="../public/img/sneaker/nike-cj9179-200-air-force-1-07-wb-1-350x350.jpg"
+                            class="img-fluid " alt="Mountains" style="width:100%">
+                        <div class="mask flex-center rgba-red-strong">
+                            <p class="white-text" href="">View more</p>
+                        </div>
+                    </a>
+
+                </div>
+                <div style="margin-top: 20px;">
+                    <p align="center">NIKE AIR FORCE 1 Collection
+                    </p>
+                </div>
+
+            </div>
+            <div class="columnT">
+                <div class="view overlay">
+                    <a href=""><img src="../public/img/sneaker/Nike-x-Kendrick-Lamar-Cortez-Basic-Slip-feat-350x350.jpg"
+                            class="img-fluid " alt="Mountains" style="width:100%">
+                        <div class="mask flex-center rgba-red-strong">
+                            <p class="white-text" href="">View more</p>
+                        </div>
+                    </a>
+
+                </div>
+                <div style="margin-top: 20px;">
+                    <p align="center">NIKE CORTEZ Collection
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="columnT">
+                <div class="view overlay">
+                    <a href=""><img src="../public/img/sneaker/images.jpeg" class="img-fluid " alt="Mountains"
                             style="width:100%">
                         <div class="mask flex-center rgba-red-strong">
                             <p class="white-text" href="">View more</p>
@@ -46,152 +143,45 @@
 
                 </div>
                 <div style="margin-top: 20px;">
-                    <p align="center">AIR MAX 97 Collection
+                    <p align="center">NIKE UPTEMPO Collection
                     </p>
                 </div>
 
-            </div>
-            <div class="columnT">
-                <div class="view overlay">
-                    <a href=""><img src="../public/img/sneaker/product_template_91523.jpeg" class="img-fluid "
-                            alt="Mountains" style="width:100%">
-                        <div class="mask flex-center rgba-red-strong">
-                            <p class="white-text" href="">View more</p>
-                        </div>
-                    </a>
-
-                </div>
-                <div style="margin-top: 20px;">
-                    <p align="center">AIR MAX 98 Collection
-                    </p>
-                </div>
-
-            </div>
-            <div class="columnT">
-                <div class="view overlay">
-                    <a href=""><img src="../public/img/sneaker/product_template_91565.jpeg" class="img-fluid "
-                            alt="Mountains" style="width:100%">
-                        <div class="mask flex-center rgba-red-strong">
-                            <p class="white-text" href="">View more</p>
-                        </div>
-                    </a>
-
-                </div>
-                <div style="margin-top: 20px;">
-                    <p align="center">AIR MAX 270 Collection
-                    </p>
-                </div>
-
-            </div>
-            <div class="columnT">
-                <div class="view overlay">
-                    <a href=""><img src="../public/img/sneaker/download.jpeg" class="img-fluid " alt="Mountains"
-                            style="width:100%">
-                        <div class="mask flex-center rgba-red-strong">
-                            <p class="white-text" href="">View more</p>
-                        </div>
-                    </a>
-
-                </div>
-                <div style="margin-top: 20px;">
-                    <p align="center">AIR JORDAN Collection
-                    </p>
-                </div>
-
-            </div>
-
-
-            <div class="row" style="margin-left:0px;">
-                <div class="columnT">
-                    <div class="view overlay">
-                        <a href=""><img src="../public/img/sneaker/nike-cj9179-200-air-force-1-07-wb-1-350x350.jpg"
-                                class="img-fluid " alt="Mountains" style="width:100%">
-                            <div class="mask flex-center rgba-red-strong">
-                                <p class="white-text" href="">View more</p>
-                            </div>
-                        </a>
-
-                    </div>
-                    <div style="margin-top: 20px;">
-                        <p align="center">NIKE AIR FORCE 1 Collection
-                        </p>
-                    </div>
-
-                </div>
-                <div class="columnT">
-                    <div class="view overlay">
-                        <a href=""><img
-                                src="../public/img/sneaker/Nike-x-Kendrick-Lamar-Cortez-Basic-Slip-feat-350x350.jpg"
-                                class="img-fluid " alt="Mountains" style="width:100%">
-                            <div class="mask flex-center rgba-red-strong">
-                                <p class="white-text" href="">View more</p>
-                            </div>
-                        </a>
-
-                    </div>
-                    <div style="margin-top: 20px;">
-                        <p align="center">NIKE CORTEZ Collection
-                        </p>
-                    </div>
-
-                </div>
-
-                <div class="columnT">
-                    <div class="view overlay">
-                        <a href=""><img src="../public/img/sneaker/images.jpeg" class="img-fluid " alt="Mountains"
-                                style="width:100%">
-                            <div class="mask flex-center rgba-red-strong">
-                                <p class="white-text" href="">View more</p>
-                            </div>
-                        </a>
-
-                    </div>
-                    <div style="margin-top: 20px;">
-                        <p align="center">NIKE UPTEMPO Collection
-                        </p>
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div align="center"
-                style="font-family: Roboto Mono;margin-left: 400px;margin-top: 20px;margin-bottom: 40px;">
-                <button type="button" href="" class="btn btn-link"> >>Xem tất cả giày NIKE</button>
             </div>
 
         </div>
+
+        <div align="center" style="font-family: Roboto Mono;margin-left: 400px;margin-top: 20px;margin-bottom: 40px;">
+            <button type="button" href="" class="btn btn-link"> >>Xem tất cả giày NIKE</button>
+        </div>
+
     </div>
+</div>
+
+<script language="javascript ">
+    document.getElementById("search ").onclick = function () {
+        document.getElementById("quicksearch-hidden ").hidden = false;
+        document.getElementById("search ").hidden = true;
+    };
+
+    document.getElementById("searchClose ").onclick = function () {
+        document.getElementById("quicksearch-hidden ").hidden = true;
+        document.getElementById("search ").hidden = false;
+    };
+</script>
+<script>
+    $(".noti-badge ").prepend($(".noti a ").length);
+</script>
 
 
-
-
-        <script language="javascript ">
-            document.getElementById("search ").onclick = function () {
-                document.getElementById("quicksearch-hidden ").hidden = false;
-                document.getElementById("search ").hidden = true;
-            };
-
-            document.getElementById("searchClose ").onclick = function () {
-                document.getElementById("quicksearch-hidden ").hidden = true;
-                document.getElementById("search ").hidden = false;
-            };
-        </script>
-        <script>
-            $(".noti-badge ").prepend($(".noti a ").length)
-        </script>
-
-
-        <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js "
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo "
-            crossorigin="anonymous "></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js "
-            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1 "
-            crossorigin="anonymous "></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js "
-            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM "
-            crossorigin="anonymous "></script>
-
-</body>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js "
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo "
+    crossorigin="anonymous "></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js "
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1 "
+    crossorigin="anonymous "></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js "
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM "
+    crossorigin="anonymous "></script>
